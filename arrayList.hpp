@@ -270,4 +270,16 @@ public:
 
 };
 
+template <typename T> std::ostream& operator<<(std::ostream &out, ArrayList<T> &data) {
+    out << "[";
+    T* array = data.toArray();
+    for(int i=0;i<data.size();i++){
+        if(i!=0)
+            out << ", ";
+        out << array[i];
+    }
+    out << "]";
+    return out;
+}
+
 #endif
