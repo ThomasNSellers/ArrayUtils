@@ -136,9 +136,16 @@ public:
         return false;
     }//end isEmpty
 
-
-    void test();
-
+    ///Swaps two items in an arrayList
+    void swap(int index, int index2){//swaps two items in an arrayList
+        if(index>length)
+            overflowError(index);
+        if(index2>length)
+            overflowError(index2);
+        T swapStorage = array[index];
+        array[index] = index2;
+        array[index2] = swapStorage;
+    }
 };
 
 template <> class ArrayList<int> {
@@ -264,10 +271,15 @@ public:
             return true;
         return false;
     }//end isEmpty
-
-
-    void test();
-
+    void swap(int index, int index2){//swaps two items in an arrayList
+        if(index>length)
+            overflowError(index);
+        if(index2>length)
+            overflowError(index2);
+        int swapStorage = array[index];
+        array[index] = index2;
+        array[index2] = swapStorage;
+    }
 };
 
 template <typename T> std::ostream& operator<<(std::ostream &out, ArrayList<T> &data) {
